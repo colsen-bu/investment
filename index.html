@@ -38,7 +38,6 @@
         </header>
         <div class="flex justify-center items-baseline gap-3">
           <div id="waerValue" class="text-5xl font-extrabold text-indigo-600">--%</div>
-          <div id="waerSub" class="text-lg text-slate-500">-- bps</div>
         </div>
       </section>
 
@@ -125,7 +124,7 @@
                   afterBody: function(ctx) {
                     const i = ctx[0].dataIndex;
                     const exp = sortedExpenses[i];
-                    return `Expense Ratio: ${exp.toFixed(2)}% (${exp.toFixed(0)} bps)`;
+                    return `Expense Ratio: ${exp.toFixed(2)}%`;
                   }
                 }
               }
@@ -155,7 +154,6 @@
         const waerBps = waerFraction * 10000;
 
         document.getElementById('waerValue').textContent = waerPercent.toFixed(4) + '%';
-        document.getElementById('waerSub').textContent = waerBps.toFixed(2) + ' bps';
       }
     });
   </script>
